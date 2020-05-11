@@ -43,7 +43,7 @@ export default {
     findWords: function(){
       axios.get('https://api.datamuse.com/words',{
         params: {
-          ml: this.phrase,
+          ant: this.phrase,
           rel_rhy: this.rhyme
         }
       })
