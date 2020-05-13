@@ -13,7 +13,7 @@ Vue.use(VueRouter)
     component: Rhymesaurus
   },
   {
-    path: '/',
+    path: '/adjective',
     name: 'Adjective',
     component: Adjective
   }

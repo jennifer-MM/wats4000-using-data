@@ -1,5 +1,6 @@
 <template>
   <div class="adjective">
+    <h1>Find an Adjective</h1>
     <form v-on:submit.prevent="findWords">
       <p>Find adjectives for <input type="text" v-model="adjective"> <button type="submit">Search</button></p>
     </form>

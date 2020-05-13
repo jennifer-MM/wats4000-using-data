@@ -3,11 +3,16 @@
     <div id="nav">
       <router-link to="/#">Rhymesaurus</router-link> |
       <router-link to="/adjective">Adjective</router-link>
-      </div>
-    <h1>Rhymesaurus: The Rhyming Thesaurus</h1>
+    </div>
     <router-view/>
   </div>
 </template>
+
+<script>
+  export default {
+    name: 'app'
+  }
+</script>
 
 <style>
 #app {
