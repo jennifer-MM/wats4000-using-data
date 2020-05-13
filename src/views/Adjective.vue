@@ -1,11 +1,10 @@
 <template>
-  <div class="rhymesaurus">
+  <div class="adjective">
     <form v-on:submit.prevent="findWords">
-      <p>Find rhymes for <input type="text" v-model="rhyme"> related to <input type="text" v-model="phrase"> <button type="submit">Search</button></p>
+      <p>Find adjectives for <input type="text" v-model="adjective"> <button type="submit">Search</button></p>
     </form>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         s list show only if there are results and if the length is greater than 0. -->
     <ul v-if="results && results.length > 0" class="results">
-      <!-- TODO: Add a v-for loop to the LI tag to loop through the items in the results. -->
       <li v-for= "item of results" :key="item">
         <p><strong>{{item.word}}</strong></p>
         <p>{{item.score}}</p>
@@ -30,21 +29,19 @@
 <script>
 import axios from 'axios';
 export default {
-  name: 'Rhymesaurus',
+  name: 'Adjective',
   data () {
     return {
       results: null,
       errors: [],
-      phrase: '',
-      rhyme: ''
+      adjective: ''
     }
   },
   methods: {
     findWords: function(){
       axios.get('https://api.datamuse.com/words',{
         params: {
-          ant: this.phrase,
-          rel_rhy: this.rhyme
+          rel_jjb: this.adjective
         }
       })
       .then(response => {
@@ -60,8 +57,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.rhymesaurus {
+.adjective {
   font-size: 1.4rem;
+  color: #42b983;
 }
 input[type="text"]{
   border-top: none;
@@ -86,20 +84,6 @@ button{
 }
 h1, h2 {
   font-weight: normal;
-}
-ul.results {
-  list-style-type: none;
-  padding: 0;
-}
-.results li {
-  display: inline-block;
-  margin: 10px;
-  border: solid 1px #333;
-  padding: 0.5rem;
-  width: 200px;
-  min-height: 100px;
-  color: #fff;
-  background: rgba(0,0,0,0.7);
 }
 ul.errors {
   list-style-type: none;

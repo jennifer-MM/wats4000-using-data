@@ -1,5 +1,9 @@
 <template>
   <div id="app">
+    <div id="nav">
+      <router-link to="/#">Rhymesaurus</router-link> |
+      <router-link to="/adjective">Adjective</router-link>
+      </div>
     <h1>Rhymesaurus: The Rhyming Thesaurus</h1>
     <router-view/>
   </div>
