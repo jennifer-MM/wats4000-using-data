@@ -4,7 +4,7 @@
     <form v-on:submit.prevent="findWords">
       <p>Find adjectives for <input type="text" v-model="adjective"> <button type="submit">Search</button></p>
     </form>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        s list show only if there are results and if the length is greater than 0. -->
+    
     <ul v-if="results && results.length > 0" class="results">
       <li v-for= "item of results" :key="item">
         <p><strong>{{item.word}}</strong></p>

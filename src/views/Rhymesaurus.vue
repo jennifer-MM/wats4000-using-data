@@ -4,7 +4,7 @@
     <form v-on:submit.prevent="findWords">
       <p>Find rhymes for <input type="text" v-model="rhyme"> related to <input type="text" v-model="phrase"> <button type="submit">Search</button></p>
     </form>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        s list show only if there are results and if the length is greater than 0. -->
+
     <ul v-if="results && results.length > 0" class="results">
       <!-- TODO: Add a v-for loop to the LI tag to loop through the items in the results. -->
       <li v-for= "item of results" :key="item">
